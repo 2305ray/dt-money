@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "description": "Desenvolvimento de Site",
+      "type": "income",
+      "category": "Venda",
+      "price": 1400,
+      "createdAt": "2025-05-16T15:52:02.081Z"
+    },
+    {
+      "id": "2",
+      "description": "Hamburguer",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 40,
+      "createdAt": "2025-05-16T15:52:02.081Z"
+    },
+    {
+      "id": "bf1e",
+      "description": "landing page",
+      "category": "venda",
+      "price": 1000,
+      "type": "income",
+      "createdAt": "2025-05-19T17:53:44.671Z"
+    }
+  ]
+}
