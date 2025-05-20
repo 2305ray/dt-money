@@ -23,6 +23,22 @@
       "price": 1000,
       "type": "income",
       "createdAt": "2025-05-19T17:53:44.671Z"
+    },
+    {
+      "id": "41f0",
+      "description": "pastel",
+      "category": "alimentação",
+      "price": 10,
+      "type": "outcome",
+      "createdAt": "2025-05-20T13:13:45.278Z"
+    },
+    {
+      "id": "a19b",
+      "description": "iorgute",
+      "category": "alimentação",
+      "price": 3,
+      "type": "outcome",
+      "createdAt": "2025-05-20T13:14:41.404Z"
     }
   ]
 }

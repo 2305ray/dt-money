@@ -1,6 +1,8 @@
-import { useContext } from "react";
+import { useContextSelector } from "use-context-selector";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 
 import {
@@ -8,11 +10,12 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "./styles";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { dateFormmatter, priceFormmatter } from "../../utils/formatter";
 
 export function Transactions() {
-  const {transactions} = useContext(TransactionsContext)
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions;
+  });
+
   return (
     <div>
       <Header />
@@ -29,12 +32,14 @@ export function Transactions() {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <PriceHighlight variant={transaction.type}>
-                      {transaction.type === 'outcome' && '- '}
-                      {priceFormmatter.format(transaction.price)}
+                      {transaction.type === "outcome" && "- "}
+                      {priceFormatter.format(transaction.price)}
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormmatter.format(new Date(transaction.createdAt))}</td>
+                  <td>
+                    {dateFormatter.format(new Date(transaction.createdAt))}
+                  </td>
                 </tr>
               );
             })}
